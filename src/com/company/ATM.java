@@ -1,26 +1,54 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ATM {
-    Account FIKRU = new  Account("fi","12ddf",700,"100");
+    Account FIKRU = new  Account(67891,"12ddf","123",700);
+    Account Anthony= new Account(12345,"valleant","000",50);
+    Account phil = new Account(011121,"PHIL","456",2000);
+    ArrayList<Account> accounts = new ArrayList<Account>();
+    public Account arryadder(){
+        accounts.add(Anthony);
+        accounts.add(FIKRU);
+        accounts.add(phil);
+        for(Account ACC:accounts){
+            return ACC;
+        }
+        return
+
+    }
 
 
     private  double deposite;
     private double withdraw;
-    private double balance = FIKRU.getBalance();
+    private double balance = Anthony.getBalance();
+
     Scanner scan = new Scanner(System.in);
+
+
     public void userinfo(){
-        System.out.println("enter your name ");
-        String name = scan.nextLine();
-        System.out.println("enter urpin no ");
+        System.out.println("enter your Account ");
+        int account = scan.nextInt();
+        scan.nextLine();
+        System.out.println("enter your pin no ");
         String pinNo = scan.nextLine();
-        System.out.println("do you want deposit or withdraw");
-        String withdrwaDeposit = scan.nextLine();
-        if(withdrwaDeposit.equalsIgnoreCase("withdraw"))
-            setWithdraw();
-        else if(withdrwaDeposit.equalsIgnoreCase("deposit"))
-            setDeposite();
+
+
+        if (account == Anthony.getAccountNumber()&& Anthony.getPin().equalsIgnoreCase(pinNo)){
+            System.out.println("do you want deposit or withdraw");
+            String withdrwaDeposit = scan.nextLine();
+            if(withdrwaDeposit.equalsIgnoreCase("withdraw"))
+                setWithdraw();
+            else if(withdrwaDeposit.equalsIgnoreCase("deposit"))
+                setDeposite();
+
+        }
+        else {
+            System.out.println("try agian  ");
+
+        }
+
 
 
     }
@@ -53,18 +81,20 @@ public class ATM {
     }
 
     public void setDeposite(){
-        if(this.balance<this.withdraw)
-            System.out.println("you don't have sufficient balance ");
-        else
+
             this.balance = this.balance+this.deposite;
 
-        System.out.println( "you deposite "+ this.withdraw +" now the balance is " + this.balance);
+        System.out.println( "you deposite "+ this.deposite +" now the balance is " + this.balance);
 
 
     }
     public void setWithdraw(){
-        this.balance = this.balance-this.withdraw;
-        System.out.println( "you withdraw "+ this.withdraw +" now the balance is " + this.balance);
+        if(this.balance<this.withdraw)
+            System.out.println("you don't have sufficient balance ");
+        else {
+            this.balance = this.balance - this.withdraw;
+            System.out.println("you withdraw " + this.withdraw + " now the balance is " + this.balance);
+        }
 
     }
 
