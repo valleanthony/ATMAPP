@@ -8,16 +8,16 @@ public class ATM {
     Account Anthony= new Account(12345,"valleant","000",50);
     Account phil = new Account(011121,"PHIL","456",2000);
     ArrayList<Account> accounts = new ArrayList<Account>();
-    public Account arryadder(){
-        accounts.add(Anthony);
-        accounts.add(FIKRU);
-        accounts.add(phil);
-        for(Account ACC:accounts){
-            return ACC;
-        }
-        return
-
-    }
+//    public Account arryadder(){
+//        accounts.add(Anthony);
+//        accounts.add(FIKRU);
+//        accounts.add(phil);
+//        for(Account ACC:accounts){
+//            return ACC;
+//        }
+//        return
+//
+//    }
 
 
     private  double deposite;
