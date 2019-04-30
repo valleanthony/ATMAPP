@@ -45,7 +45,7 @@ public class ATM {
 
         } else {
             System.out.println("Please try again");
-
+            userinfo();
         }
     }
         /// The GUI for the ATM. This section determines the user actions and the methods served up.
