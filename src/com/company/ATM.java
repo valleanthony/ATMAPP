@@ -1,23 +1,35 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class ATM {
+
+
     Account fikru = new  Account(67891,"12ddf","123",700);
     Account Anthony= new Account(12345,"valleant","000",50);
     Account phil = new Account(011121,"PHIL","456",2000);
-    ArrayList<Account> accounts = new ArrayList<Account>();
-//    public Account arryadder(){
-//        accounts.add(Anthony);
-//        accounts.add(FIKRU);
-//        accounts.add(phil);
-//        for(Account ACC:accounts){
-//            return ACC;
-//        }
-//        return
-//
-//    }
+
+
+
+
+
+        //This adds the account numbers into an array to validate if they are valid accounts stored in the system.
+        public void metho3() {
+            //Adding all accounts and pins to hashmap.
+            HashMap<Integer, String> accno = new HashMap<Integer, String>();
+            accno.put(67891,"123");
+            accno.put(12345,"000");
+            accno.put(01121,"456");
+        }
+
+
+
+
+    /*
+    Start of ATM app
+     */
 
 
     private  double deposite;
@@ -29,16 +41,23 @@ public class ATM {
 
 
     public void userinfo() {
+        //Adding all accounts and pins to hashmap.
+        HashMap<Integer, String> accno = new HashMap<Integer, String>();
+        accno.put(67891,"123");
+        accno.put(12345,"000");
+        accno.put(01121,"456");
+
+
         System.out.println("Hello, Please follow the instructions below:");
         System.out.println("Enter your account number");
         int account = scan.nextInt();
         scan.nextLine();
         System.out.println("Enter your pin number");
         String pinNo = scan.nextLine();
-        int[] accntname=  {Anthony.getAccountNumber(),fikru.getAccountNumber(),phil.getAccountNumber()};
 
 
-        if (account == Anthony.getAccountNumber() && Anthony.getPin().equalsIgnoreCase(pinNo)) {
+        //Validates account and pin
+        if (pinNo.equalsIgnoreCase(accno.get(account))) {
 
             userGUI();
 
@@ -112,6 +131,7 @@ public class ATM {
         this.withdraw = withdraw;
     }
     public double getBalance(){
+
         return balance;
     }
 

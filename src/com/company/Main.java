@@ -7,8 +7,10 @@ public class Main {
        // Account Anthony = new Account(12345,"Anthony Valle",0000,50.00);
 
         ATM atm = new ATM();
+        Account account = new Account();
 
         atm.userinfo();
+
 
 
 

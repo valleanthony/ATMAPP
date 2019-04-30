@@ -51,15 +51,7 @@ public class Account {
         this.balance = balance;
     }
 
-    public String validaccounts(){
-        if(accountNumber == 12345 && pin.equalsIgnoreCase("000") || accountNumber ==67891 && pin.equalsIgnoreCase("123") || accountNumber ==011121 && pin.equalsIgnoreCase("456")){
-            return "VALID";
-        }
 
-        else{
-            return "Not valid. Please Try again. ";
-        }
-}
 
 
 }
