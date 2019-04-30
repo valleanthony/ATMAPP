@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ATM {
-    Account FIKRU = new  Account(67891,"12ddf","123",700);
+    Account fikru = new  Account(67891,"12ddf","123",700);
     Account Anthony= new Account(12345,"valleant","000",50);
     Account phil = new Account(011121,"PHIL","456",2000);
     ArrayList<Account> accounts = new ArrayList<Account>();
@@ -35,8 +35,8 @@ public class ATM {
         scan.nextLine();
         System.out.println("Enter your pin number");
         String pinNo = scan.nextLine();
+        int[] accntname=  {Anthony.getAccountNumber(),fikru.getAccountNumber(),phil.getAccountNumber()};
 
-        //This section validates the account.
 
         if (account == Anthony.getAccountNumber() && Anthony.getPin().equalsIgnoreCase(pinNo)) {
 
@@ -71,17 +71,15 @@ public class ATM {
             }
             if (userinput == 3) {
                 //needs to be built
-                System.out.println("Not Built yet.");
+                System.out.println("your balance is "+this.balance);
 
 
             }
             if (userinput == 4) {
                 System.out.println("you have been logged out ");
                 validacct = false;
-            } else {
-                System.out.println("you have been logged out ");
-                validacct = false;
             }
+
 
         }
 
