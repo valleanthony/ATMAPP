@@ -33,22 +33,54 @@ public class ATM {
         scan.nextLine();
         System.out.println("enter your pin no ");
         String pinNo = scan.nextLine();
+        boolean validacct = false;
 
+        //This section validates the account.
 
         if (account == Anthony.getAccountNumber()&& Anthony.getPin().equalsIgnoreCase(pinNo)){
-            System.out.println("do you want deposit or withdraw");
-            String withdrwaDeposit = scan.nextLine();
-            if(withdrwaDeposit.equalsIgnoreCase("withdraw"))
-                setWithdraw();
-            else if(withdrwaDeposit.equalsIgnoreCase("deposit"))
-                setDeposite();
+
+            validacct =true;
 
         }
         else {
-            System.out.println("try agian  ");
+            System.out.println("try agian");
 
         }
 
+        /// The GUI for the ATM. This section determines the user actions and the methods served up.
+        while (validacct == true){
+            System.out.println("Hello " + Anthony.getUserName()+ " What can we do for you today? " );
+            System.out.println("1. Enter the number one for Deposits");
+            System.out.println("2. Enter the number two for Withdraws");
+            System.out.println("3. Enter the number three for Balance");
+            System.out.println("4. Enter 4 to logout");
+            int userinput = scan.nextInt();
+            scan.nextLine();
+
+            if(userinput == 1){
+
+            }
+
+            if(userinput == 2){
+
+            }
+            if (userinput == 3){
+
+            }
+            if (userinput == 4){
+                System.out.println("you have been logged out ");
+                validacct =false;
+            }
+
+            else{
+                System.out.println("you have been logged out ");
+                validacct = false;
+            }
+
+
+
+
+        }
 
 
     }
